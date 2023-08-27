@@ -7,7 +7,7 @@ To compile the shell program, follow these steps:
 
 1- Clone the repository:
 ```
-git clone https://github.com/your-username/shell-program.git
+git clone https://github.com/xertendsz/simple-shell.git
 cd shell-program
 ```
 
