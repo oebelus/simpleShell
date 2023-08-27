@@ -25,6 +25,6 @@ The shell will provide a prompt ($) where you can input commands. It will execut
 ## Features
 ### Command Execution
 ### Built-in Commands
-The shell supports some basic built-in commands:
-    - `echo`: Display messages or values of environment variables.<br>
+The shell supports some basic built-in commands:<br>
+    - `echo`: Display messages or values of environment variables.
     - `env`: List environment variables and their values.
