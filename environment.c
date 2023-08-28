@@ -35,7 +35,7 @@ void make_environment(env *environment, char *env[])
         if (env[j] != NULL)
         {
             char *envj = strdup(env[j]);
-            char *token = strtok(envj, "=");
+            char *token = strdup(strtok(envj, "="));
 
             if (token != NULL)
             {
@@ -49,6 +49,7 @@ void make_environment(env *environment, char *env[])
             }
 
             free(envj);
+            free(token);
         }
         else
         {
@@ -155,3 +156,4 @@ int _unsetenv(char *name, env *environment)
 
     return (-1); /* Variable not found */
 }
+
