@@ -7,12 +7,12 @@
  * the provided command. If the command is not executable, it falls back to
  * executing the first element of the 'array'.
  *
- * @fullcommand: Path to the executable command
- * @array: Array of command and arguments
- * @envp: Array of environment variables
- * @i: Pointer to the index to reset after execution
+ * @param fullcommand: Path to the executable command
+ * @param array: Array of command and arguments
+ * @param envp: Array of environment variables
+ * @param i: Pointer to the index to reset after execution
  */
-void execution(char *fullcommand, char **array, char **envp, int *i, int *last_command_status, char **argv)
+void execution(char *fullcommand, char **array, char **envp, int *i)
 {
     int pid, status;
 
@@ -27,11 +27,8 @@ void execution(char *fullcommand, char **array, char **envp, int *i, int *last_c
         {
             execve(array[0], array, envp);
         }
-        
-        if (isatty(fileno(stdin)))
-            perror("./hsh");
-        else
-            printf("%s: %d: %s: not found\n", argv[0], *last_command_status + 1, array[0]);
+        /* If execve fails, it will continue here */
+        perror("./hsh");
         exit(EXIT_FAILURE);
     }
     else if (pid > 0)
