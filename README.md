@@ -1,5 +1,5 @@
 # Simple Shell
-This repository contains a simple shell program implemented in C. The shell is designed to read and execute commands from the user. It is a basic command-line interface that reads user input and executes commands.
+A basic command-line interface that reads user input and executes commands.
 
 ## Compilation
 
